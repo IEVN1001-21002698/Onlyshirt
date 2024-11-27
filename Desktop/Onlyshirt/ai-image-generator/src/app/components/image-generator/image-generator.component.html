@@ -1,0 +1,31 @@
+<div class="container mx-auto text-center py-10">
+    <h1 class="text-3xl font-bold mb-6 text-pink-500">Generador de Imágenes</h1>
+    <input
+      type="text"
+      placeholder="Describe tu diseño"
+      [(ngModel)]="prompt"
+      class="border rounded-lg px-4 py-2 w-1/2 mb-4"
+    />
+    <button
+      (click)="generateImage()"
+      class="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-400"
+    >
+      Generar Imagen
+    </button>
+  
+    <!-- Mostrar indicador de carga -->
+    <div *ngIf="isLoading" class="mt-6 text-pink-500">
+      Generando imagen...
+    </div>
+  
+    <!-- Mostrar la imagen generada -->
+    <div *ngIf="imageUrl" class="mt-6">
+      <h2 class="text-xl font-semibold mb-4">Tu Imagen Generada:</h2>
+      <img
+        [src]="imageUrl"
+        alt="Generated Image"
+        class="mx-auto border rounded-lg shadow-lg"
+      />
+    </div>
+  </div>
+  

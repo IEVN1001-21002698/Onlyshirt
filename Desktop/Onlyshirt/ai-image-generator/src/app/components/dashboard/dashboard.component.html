@@ -1,0 +1,66 @@
+<div class="flex h-screen bg-gray-900 text-white">
+  <!-- Sidebar -->
+  <div class="w-64 bg-gray-800 text-gray-200 fixed top-4 left-4 bottom-4 rounded-2xl shadow-xl">
+    <div class="py-6 px-6 font-bold text-lg text-center border-b border-gray-700">
+      <span class="flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+        </svg>
+        Admin Dashboard
+      </span>
+    </div>
+    <ul class="space-y-4 px-6 mt-6">
+      <li class="flex items-center space-x-2 hover:bg-gray-700 rounded-lg p-2 transition duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+        </svg>
+        <a routerLink="/dashboard/usuarios" class="flex-1 text-gray-200">Usuarios</a>
+      </li>
+      <li class="flex items-center space-x-2 hover:bg-gray-700 rounded-lg p-2 transition duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h11m-4 4H7m-4 4H7M5 2a2 2 0 100 4 2 2 0 000-4z" />
+        </svg>
+        <a routerLink="/dashboard/configuracion" class="flex-1 text-gray-200">Configuración</a>
+      </li>
+      <li class="flex items-center space-x-2 hover:bg-gray-700 rounded-lg p-2 transition duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m0 0v-6m0 6H7m2 0h2m4 0v-2m0 2v-6m0 6h-2m2 0h2m4 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <a routerLink="/dashboard/reportes" class="flex-1 text-gray-200">Reportes</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-1 ml-72 px-8 py-8">
+    <!-- Navbar -->
+    <div class="bg-gray-800 shadow-lg rounded-xl px-6 py-4 flex items-center justify-between text-gray-200">
+      <!-- Título del Navbar -->
+      <h1 class="text-xl font-bold">Panel de Administración</h1>
+
+      <!-- Botones del Navbar -->
+      <div class="flex items-center space-x-4">
+        <!-- Botón de Menú para pantallas pequeñas -->
+        <button
+          class="block md:hidden bg-gray-700 text-white px-4 py-2 rounded-lg"
+          (click)="toggleSidebar()"
+        >
+          Menú
+        </button>
+
+        <!-- Botón de Cerrar Sesión -->
+        <button
+          class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-200"
+          (click)="logout()"
+        >
+          Cerrar Sesión
+        </button>
+      </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="bg-gray-800 rounded-xl shadow-lg mt-6 p-6 text-gray-200">
+      <app-root></app-root>
+    </div>
+  </div>
+</div>

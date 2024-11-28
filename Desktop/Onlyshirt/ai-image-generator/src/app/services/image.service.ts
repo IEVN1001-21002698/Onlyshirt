@@ -6,13 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ImageService {
-  private apiUrl = 'http://127.0.0.1:5000/generate-image'; // URL del backend Flask
+  private apiUrl = 'http://127.0.0.1:5000/api/generate-image'; // URL del backend Flask
 
   constructor(private http: HttpClient) {}
 
-  // Método para enviar el prompt y obtener la URL de la imagen
-  generateImage(prompt: string): Observable<any> {
-    return this.http.post(this.apiUrl, { prompt });
+  generateImage(prompt: string): Observable<{ image_url: string }> {
+    return this.http.post<{ image_url: string }>(this.apiUrl, { prompt });
   }
 }
-

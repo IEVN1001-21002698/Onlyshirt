@@ -1,0 +1,109 @@
+<div class="grid grid-cols-7 grid-rows-8 gap-4 bg-gray-100 min-h-screen p-6">
+    <!-- Elemento 1 -->
+    <div class="row-span-2 bg-gradient-to-r from-green-500 to-green-700 shadow-xl rounded-lg p-6 flex flex-col justify-center items-center text-center transform transition-transform hover:scale-105">
+        <h4 class="font-semibold text-white text-lg">Clientes con Venta</h4>
+        <p class="text-3xl font-bold text-white">{{ reporteGeneral.total_clientes_ventas }}</p>
+    </div>
+
+    <!-- Elemento 2 -->
+    <div class="row-span-2 col-start-1 row-start-3 bg-gradient-to-r from-purple-500 to-purple-700 shadow-xl rounded-lg p-6 flex flex-col justify-center items-center text-center transform transition-transform hover:scale-105">
+        <h4 class="font-semibold text-white text-lg">Productos Vendidos</h4>
+        <p class="text-3xl font-bold text-white">{{ reporteGeneral.total_productos_vendidos }}</p>
+    </div>
+
+    <!-- Elemento 3 -->
+    <div class="row-span-2 col-start-1 row-start-5 bg-gradient-to-r from-red-500 to-red-700 shadow-xl rounded-lg p-6 flex flex-col justify-center items-center text-center transform transition-transform hover:scale-105">
+        <h4 class="font-semibold text-white text-lg">Total de Ventas</h4>
+        <p class="text-3xl font-bold text-white">{{ reporteGeneral.total_ventas }}</p>
+    </div>
+
+    <!-- Elemento 4: KPI Principal -->
+    <div class="col-span-2 row-span-4 col-start-2 row-start-1 bg-gradient-to-r from-teal-500 to-teal-700 shadow-2xl rounded-lg p-8 flex flex-col justify-between transform transition-all hover:scale-105">
+        <h2 class="text-xl font-bold text-white mb-6">Compras del Total de Clientes</h2>
+
+        <!-- Contenedor para los KPIs -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+            <!-- KPI Máximo de Ventas -->
+            <div class="flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-blue-700 p-8 rounded-lg shadow-xl transform transition-transform hover:scale-105">
+                <p class="text-md font-semibold text-white mb-2">Máximo de Ventas</p>
+                <span class="text-4xl font-bold text-white">{{ clientesConVentas }}</span>
+            </div>
+
+            <!-- KPI Total de Clientes -->
+            <div class="flex flex-col items-center justify-center bg-gradient-to-r from-orange-500 to-orange-700 p-8 rounded-lg shadow-xl transform transition-transform hover:scale-105">
+                <p class="text-md font-semibold text-white mb-2">Total de Clientes</p>
+                <span class="text-4xl font-bold text-white">{{ totalClientes }}</span>
+            </div>
+
+            <!-- KPI Valor Adicional -->
+            <div class="flex flex-col items-center justify-center bg-gradient-to-r from-yellow-500 to-yellow-700 p-8 rounded-lg shadow-xl transform transition-transform hover:scale-105">
+                <p class="text-md font-semibold text-white mb-2">Valor Adicional</p>
+                <span class="text-4xl font-bold text-white">4</span>
+            </div>
+        </div>
+
+        <!-- Gráfico KPI -->
+        <div class="mb-4">
+            <canvas id="kpiChart" class="h-64 w-full rounded-lg shadow-lg"></canvas>
+        </div>
+
+        <!-- Detalle Adicional del KPI -->
+        <div class="flex flex-col items-center mt-4">
+            <p class="text-lg font-semibold text-gray-600">Clientes</p>
+        </div>
+    </div>
+
+    <!-- Elemento 5 -->
+    <div class="col-span-2 row-span-4 col-start-4 row-start-1 bg-gradient-to-r from-indigo-500 to-indigo-700 shadow-2xl rounded-lg p-8 flex flex-col justify-between transform transition-all hover:scale-105">
+        <h2 class="text-xl font-bold text-white mb-6">Tipos de Producto Vendidos</h2>
+
+        <!-- Contenedor para los KPIs -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+            <!-- Añadir contenido según sea necesario -->
+        </div>
+
+        <!-- Gráfico KPI -->
+        <div class="mb-4">
+            <canvas id="productosVendidosChart" class="h-64 w-full rounded-lg shadow-lg"></canvas>
+        </div>
+
+        <!-- Detalle Adicional del KPI -->
+        <div class="flex flex-col items-center mt-4">
+            <p class="text-lg font-semibold text-gray-600">Productos</p>
+        </div>
+    </div>
+
+    <!-- Elementos adicionales -->
+    <div class="col-span-2 row-span-2 col-start-6 row-start-1 bg-gradient-to-r from-pink-500 to-pink-700 shadow-xl rounded-lg p-6 flex flex-col justify-center items-center text-center transform transition-transform hover:scale-105">
+        <h2 class="text-xl font-bold text-white mb-6">Porcentaje Clientes con Venta</h2>
+        <h1 class="text-4xl font-bold text-white">{{ porcentajeClientesConVentas }}%</h1>
+    </div>
+
+    <div class="col-span-2 row-span-2 col-start-6 row-start-3 bg-gradient-to-r from-teal-500 to-teal-700 shadow-xl rounded-lg p-6 flex flex-col justify-center items-center text-center transform transition-transform hover:scale-105">
+        <h2 class="text-xl font-bold text-white mb-6">Productos sin Ventas</h2>
+        <h1 class="text-4xl font-bold text-white">{{ productosSinVentas }}</h1>
+    </div>
+
+    <div class="col-span-2 row-span-2 col-start-6 row-start-5 bg-gradient-to-r from-cyan-500 to-cyan-700 shadow-xl rounded-lg p-6 flex flex-col justify-center items-center text-center transform transition-transform hover:scale-105">
+        <h1 class="text-4xl font-bold text-white">8</h1>
+    </div>
+
+    <div class="row-span-2 col-start-1 row-start-7 bg-gradient-to-r from-teal-500 to-teal-700 shadow-xl rounded-lg p-6 flex flex-col justify-center items-center text-center transform transition-transform hover:scale-105">
+        <h4 class="font-semibold text-white text-lg">Ventas Acumuladas</h4>
+        <p class="text-3xl font-bold text-white">${{ reporteGeneral.total_ventas_acumuladas }}</p>
+    </div>
+
+    <div class="col-span-2 row-span-4 col-start-2 row-start-5 bg-gradient-to-r from-green-500 to-green-700 shadow-xl rounded-lg p-6 flex flex-col justify-center items-center text-center transform transition-transform hover:scale-105">
+        <h2 class="text-xl font-bold text-white mb-6">Clientes Inactivos</h2>
+        <h1 class="text-4xl font-bold text-white">{{ clientesInactivos }}</h1>
+    </div>
+
+    <div class="row-span-4 col-start-4 row-start-5 bg-gradient-to-r from-blue-500 to-blue-700 shadow-xl rounded-lg p-6 flex flex-col justify-center items-center text-center transform transition-transform hover:scale-105">
+        <h2 class="text-xl font-bold text-white mb-6">Clientes Frecuentes</h2>
+        <h1 class="text-4xl font-bold text-white">{{ clientesFrecuentes }}</h1>
+    </div>
+
+    <div class="col-span-3 row-span-4 col-start-5 row-start-5 bg-gradient-to-r from-purple-500 to-purple-700 shadow-xl rounded-lg p-6 flex flex-col justify-center items-center text-center transform transition-transform hover:scale-105">
+        <h1 class="text-4xl font-bold text-white">11</h1>
+    </div>
+</div>

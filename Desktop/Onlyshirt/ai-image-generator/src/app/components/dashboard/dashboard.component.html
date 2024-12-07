@@ -1,4 +1,4 @@
-<div class="flex h-screen bg-gray-900 text-white">
+<div class="flex min-h-screen bg-gray-900 text-white">
   <!-- Sidebar -->
   <div class="w-64 bg-gray-800 text-gray-200 fixed top-4 left-4 bottom-4 rounded-2xl shadow-xl">
     <div class="py-6 px-6 font-bold text-lg text-center border-b border-gray-700">
@@ -10,24 +10,59 @@
       </span>
     </div>
     <ul class="space-y-4 px-6 mt-6">
-      <li class="flex items-center space-x-2 hover:bg-gray-700 rounded-lg p-2 transition duration-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-        </svg>
-        <a routerLink="/dashboard/usuarios" class="flex-1 text-gray-200">Usuarios</a>
-      </li>
-      <li class="flex items-center space-x-2 hover:bg-gray-700 rounded-lg p-2 transition duration-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h11m-4 4H7m-4 4H7M5 2a2 2 0 100 4 2 2 0 000-4z" />
-        </svg>
-        <a routerLink="/dashboard/configuracion" class="flex-1 text-gray-200">Configuración</a>
-      </li>
-      <li class="flex items-center space-x-2 hover:bg-gray-700 rounded-lg p-2 transition duration-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m0 0v-6m0 6H7m2 0h2m4 0v-2m0 2v-6m0 6h-2m2 0h2m4 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <a routerLink="/dashboard/reportes" class="flex-1 text-gray-200">Reportes</a>
-      </li>
+      <ul>
+        <!-- Ícono para Clientes -->
+        <li class="flex items-center space-x-2 hover:bg-gray-700 rounded-lg p-2 transition duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-3.31 0-6 2.69-6 6v1h12v-1c0-3.31-2.69-6-6-6z" />
+          </svg>
+          <a routerLink="/dashboard/usuarios" class="flex-1 text-gray-200">Clientes</a>
+        </li>
+      
+        <!-- Ícono para Proveedores -->
+        <li class="flex items-center space-x-2 hover:bg-gray-700 rounded-lg p-2 transition duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405 1.405c-.607.607-.795 1.517-.552 2.288.208.667.725 1.186 1.406 1.406l1.549.633c-.401-.694-.803-1.388-1.2-2.08-1.4-2.243-3.28-3.872-5.69-4.057-1.066-.282-2.164-.318-3.228-.11L8.267 9.621c-2.552.814-4.407 3.173-4.433 5.845L3 16h12v1z" />
+          </svg>
+          <a routerLink="/dashboard/proveedores" class="flex-1 text-gray-200">Proveedores</a>
+        </li>
+      
+        <!-- Ícono para Administradores -->
+        <li class="flex items-center space-x-2 hover:bg-gray-700 rounded-lg p-2 transition duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a5 5 0 015 5v3h3a1 1 0 011 1v6a1 1 0 01-1 1h-3v3a5 5 0 11-10 0v-3H4a1 1 0 01-1-1v-6a1 1 0 011-1h3V7a5 5 0 015-5z" />
+          </svg>
+          <a routerLink="/dashboard/admin" class="flex-1 text-gray-200">Administradores</a>
+        </li>
+      
+        <!-- Ícono para abc -->
+        <li class="flex items-center space-x-2 hover:bg-gray-700 rounded-lg p-2 transition duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12h15M9 3v18M15 3v18" />
+          </svg>
+
+          <a routerLink="/dashboard/reportes" class="flex-1 text-gray-200">ABC</a>
+        </li>
+      
+        <!-- Ícono para reportes -->
+        
+          <li class="flex items-center space-x-2 hover:bg-gray-700 rounded-lg p-2 transition duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a5 5 0 015 5v12a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5h5z" />
+            </svg>  
+          <a routerLink="/dashboard/abc" class="flex-1 text-gray-200">Reportes</a>
+
+        </li>
+      
+        <!-- Ícono para Configuración -->
+        <li class="flex items-center space-x-2 hover:bg-gray-700 rounded-lg p-2 transition duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h11m-4 4H7m-4 4H7M5 2a2 2 0 100 4 2 2 0 000-4z" />
+          </svg>
+          <a routerLink="/dashboard/configuracion" class="flex-1 text-gray-200">Configuración</a>
+        </li>
+      </ul>
+      
     </ul>
   </div>
 

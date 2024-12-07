@@ -1,0 +1,38 @@
+<!-- Main content -->
+<main class="flex-1 p-6 bg-gray-100">
+  <div class="container mx-auto">
+    <h1 class="text-3xl font-semibold text-center text-gray-800 mb-6">Usuarios Administradores</h1>
+
+    <!-- Tabla de admin -->
+    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 shadow-lg rounded-lg p-6 transform transition duration-300 hover:scale-105 hover:from-blue-400 hover:to-indigo-500">
+      <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
+        <thead class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+          <tr>
+            <th class="px-6 py-3 text-left">ID</th>
+            <th class="px-6 py-3 text-left">Nombre</th>
+            <th class="px-6 py-3 text-left">Correo</th>
+            <th class="px-6 py-3 text-left">Teléfono</th>
+            <th class="px-6 py-3 text-left">Fecha de Nacimiento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of admin" class="hover:bg-gray-200 transform transition duration-300 hover:scale-105 hover:bg-blue-100">
+            <td class="px-6 py-3 text-gray-800">{{ usuario.id }}</td>
+            <td class="px-6 py-3 text-gray-800">{{ usuario.name }}</td>
+            <td class="px-6 py-3 text-gray-800">{{ usuario.email }}</td>
+            <td class="px-6 py-3 text-gray-800">{{ usuario.phone }}</td>
+            <td class="px-6 py-3 text-gray-800">{{ usuario.dob | date: 'shortDate' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Botón para agregar usuario -->
+    <div class="mt-6 flex justify-center">
+      <button class="p-3 bg-gradient-to-r from-orange-400 to-orange-600 text-white rounded-lg shadow-xl hover:bg-orange-700 transition-colors">
+        <i class="fas fa-plus"></i> Agregar Administradores
+      </button>
+    </div>
+
+  </div>
+</main>
